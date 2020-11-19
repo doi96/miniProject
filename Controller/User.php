@@ -262,6 +262,45 @@
         }
     }
 
+    //Get profile user
+    function readProfile(){
+        $query = " SELECT * FROM " .$this->table_name. " WHERE id = ? ";
+        $stmt = $this->conn->prepare($query);
+        $this->id = htmlspecialchars(strip_tags($this->id));
+        $stmt->bindParam(1,$this->id);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $this->firstname = $row['firstname'];
+        $this->lastname = $row['lastname'];
+        $this->address = $row['address'];
+        $this->email = $row['email'];
+        $this->contact_number = $row['contact_number'];
+        $this->status = $row['status'];
+
+    }
+
+    //edit profile 
+    function editProfile(){
+        $query = " UPDATE " .$this->table_name. " SET firstname=:firstname, lastname=:lastname,address=:address,contact_number=:contact_number,email=:email WHERE id=:id" ;
+        $stmt = $this->conn->prepare($query);
+        $this->firstname = htmlspecialchars(strip_tags($this->firstname));
+        $this->address = htmlspecialchars(strip_tags($this->address));
+        $this->lastname = htmlspecialchars(strip_tags($this->lastname));
+        $this->email = htmlspecialchars(strip_tags($this->email));
+        $this->contact_number = htmlspecialchars(strip_tags($this->contact_number));
+        $this->id = htmlspecialchars(strip_tags($this->id));
+        $stmt->bindParam(':firstname',$this->firstname);
+        $stmt->bindParam(':lastname', $this->lastname);
+        $stmt->bindParam(':address', $this->address);
+        $stmt->bindParam(':contact_number', $this->contact_number);
+        $stmt->bindParam(':email', $this->email);
+        $stmt->bindParam(':id', $this->id);
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     }
 
     

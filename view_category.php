@@ -1,5 +1,7 @@
 <?php
 
+//include core
+include_once 'config/core.php';
 //include database and object 
 include_once "config/Database.php";
 $database = new Database();

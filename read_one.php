@@ -3,6 +3,8 @@
 // get ID of the product to be read
 $id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
 
+//include core
+include_once 'config/core.php';
 // include database and object files
 include_once 'config/Database.php';
 include_once 'Controller/Product.php';

@@ -1,5 +1,7 @@
 <?php
 
+//include core
+include_once 'config/core.php';
 // include database and object files
 include_once 'config/Database.php';
 include_once 'Controller/Product.php';

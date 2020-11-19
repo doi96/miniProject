@@ -3,6 +3,8 @@
 //Get ID category 
 $id = isset($_GET['id']) ? $_GET['id'] : die("ERROR: ID not found!");
 // echo $id;die;
+//include core
+include_once 'config/core.php';
 //Include database
 include_once "config/Database.php";
 $database = new Database();

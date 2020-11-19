@@ -36,6 +36,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo $home_url; ?>read_profile.php?user_id=<?php echo htmlspecialchars($_SESSION['user_id']) ?>">Profile</a></li>
                             <li><a href="<?php echo $home_url; ?>logout.php">Logout</a></li>
                         </ul>
                     </li>

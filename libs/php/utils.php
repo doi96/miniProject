@@ -68,8 +68,12 @@ class Utils{
             $mail->Body    = $body;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-            $mail->send();
-            echo 'Message has been sent';
+            if($mail->send()){
+                return true;
+            }else{
+                return false;
+            }
+            
         } catch (Exception $e) {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;

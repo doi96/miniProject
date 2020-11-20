@@ -51,7 +51,7 @@ include_once 'layouts/layout_header.php';
     </tr>
     <tr>
         <td>Status</td>
-        <?php if ($user->status == 'Active') {
+        <?php if ($user->status == '1') {
             echo "<td><span style='color:green'> Active</span></td>";
         } else {
             echo "<td><span style='color:red'> Inctive</span></td>";

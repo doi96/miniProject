@@ -35,7 +35,7 @@ if ($_POST) {
 
             // send reset link
             $body = "Hi there.<br /><br />";
-            $body .= "Please click the following link to reset your password: {$home_url}reset_password.php?access_code={$access_code}";
+            $body .= "Please click the following link to reset your password: <a href='{$home_url}reset_password.php?access_code={$access_code}'>Click here to update your password!</a>";
             $subject = "Reset Password";
             $send_to_email = $_POST['email'];
 

@@ -85,9 +85,6 @@ if($total_rows>0){
                 echo "</td>";
   
             echo "</tr>";
-        if (isset($_POST["export"])) {
-            $product->exportProductDatabase($AllResult);
-        }
 
         }
   

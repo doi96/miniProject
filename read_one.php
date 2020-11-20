@@ -64,15 +64,12 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
         echo "<td>Image</td>";
         echo "<td><img style='width:200px' src='uploads/images/$product->image' ></td>";
     echo "</tr>";
-
-    echo "<tr>";
-        echo "<td>Video</td>";
-        if(!empty($product->video)){
-            echo "<td><a target='_blank' href='uploads/videos/$product->video'>Watch video.</a></td>";
-        }else{
-        echo "<td></td>";
-        }
-    echo "</tr>";
+echo "<tr>";
+echo "<td>Video demo</td>";
+echo "<td><video width='720' height='480' controls> ";
+echo "<source src='uploads/videos/$product->video' type='video/webm'>";
+echo "</video>";
+echo "</tr>";
 
     echo "<tr>";
         echo "<td>Status</td>";

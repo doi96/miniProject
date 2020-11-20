@@ -431,25 +431,11 @@ class Product{
         return true;
     }
 
+ 
     function exportProductDatabase($AllResult){
-        //Retrieve the data from our table.
-        // $rows = $AllResult->fetchAll(PDO::FETCH_ASSOC);
 
-        $filename = "Webinfopen.xls"; // File Name
-        // Download file
-        header("Content-Disposition: attachment; filename=\"$filename\"");
-        header("Content-Type: application/vnd.ms-Excel");
-        // $user_query = mysql_query('select name,work from info');
-        // Write data to file
-        $flag = false;
-        while ($rows = $AllResult->fetchAll(PDO::FETCH_ASSOC)) {
-            if (!$flag) {
-                // display field/column names as first row
-                echo implode("\t", array_keys($rows)) . "\r\n";
-                $flag = true;
-            }
-            echo implode("\t", array_values($rows)) . "\r\n";
-        }
+        $rows = $AllResult->fetch(PDO::FETCH_ASSOC);
+        echo "<pre>";print_r($rows);die;
     }
 }
 ?>

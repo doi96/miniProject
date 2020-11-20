@@ -30,11 +30,11 @@ include 'layout_header.php';
         }
  
         echo "<div class='alert alert-info'>";
-            echo "Contents of your admin section will be here.";
+            include "chart.php";
         echo "</div>";
  
     echo "</div>";
- 
+
 // include page footer HTML
 include_once 'layout_footer.php';
 ?>
